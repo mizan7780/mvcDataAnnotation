@@ -1,0 +1,37 @@
+﻿@model RezorViewEngineTestOrhtmHelperMethodTest.Models.StudentTable
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>StudentTable</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.studentID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.studentID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.studentName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.studentName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.studentAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.studentAddress)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.studentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

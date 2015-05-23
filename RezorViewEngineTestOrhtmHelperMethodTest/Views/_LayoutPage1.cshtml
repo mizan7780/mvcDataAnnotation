@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        body{
+            margin:0px;
+            padding:0px;
+        }
+        #MenuTD{
+            background:yellow;
+            width:280px;
+            vertical-align:top;
+            
+        }
+        #BodyTD {
+            background: pink;
+            width: 700px;
+            vertical-align: top;
+        }
+        #t{
+            border-spacing:0px;
+            width:1000px;
+            height:650px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        
+        <table id="t">
+            <tr style="height:150px;">
+                <td colspan="3">
+                    @Html.Partial("ForBanner")
+                </td>
+            </tr>
+            <tr style="height:500px;">
+                <td id="MenuTD">
+                    <br />
+                    <br />
+                    @Html.ActionLink("Home", "Index", "Our")
+                    <br />
+                    <br />
+                    @Html.ActionLink("Student", "Index", "Student")
+                    <br />
+                    <br />
+                    @Html.ActionLink("Contact", "Index", "Contact")
+                </td>
+                <td style="width:20px; background:pink;"></td>
+                <td id="BodyTD">
+                    @RenderBody()
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>

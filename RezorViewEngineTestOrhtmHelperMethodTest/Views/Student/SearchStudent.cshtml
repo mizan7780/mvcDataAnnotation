@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Search Student Form";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<br /><br />
+@using (Html.BeginForm())
+{
+    <fieldset style="width:400px;">
+        <legend>Student Information</legend>
+        <table>
+            <tr>
+                <td>Student ID</td>
+                <td>@Html.TextBox("txtID")</td>
+                <td><input type="submit" value="Search" /></td>
+            </tr>
+            <tr>
+                <td>Student ID :</td>
+                <td colspan="2">@ViewBag.studentID</td>
+            </tr>
+            <tr>
+                <td>Name :</td>
+                <td colspan="2">@ViewBag.studentName</td>
+            </tr>
+            <tr>
+                <td>Address :</td>
+                <td>@ViewBag.studentAddress</td>
+            </tr>
+        </table>
+        <br />
+    </fieldset>
+    <p>
+        @Html.ActionLink("Back To List","Index","Student")
+    </p>
+}

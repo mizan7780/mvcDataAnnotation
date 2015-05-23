@@ -1,0 +1,53 @@
+﻿@model RezorViewEngineTestOrhtmHelperMethodTest.Models.StudentTable
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>StudentTable</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.studentID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.studentID)
+            @Html.ValidationMessageFor(model => model.studentID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.studentName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.studentName)
+            @Html.ValidationMessageFor(model => model.studentName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.studentAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.studentAddress)
+            @Html.ValidationMessageFor(model => model.studentAddress)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+        <p>
+            @ViewBag.msg
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
